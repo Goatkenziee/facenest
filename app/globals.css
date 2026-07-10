@@ -1,0 +1,76 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ============================================================================
+   DESIGN TOKENS — FaceNest · rose quartz · premium minimal monochrome+accent
+   ============================================================================ */
+:root {
+  --font-sans: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont,
+    "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji",
+    "Segoe UI Emoji";
+  --background: 340 20% 99%;
+  --foreground: 340 15% 12%;
+  --card: 0 0% 100%;
+  --card-foreground: 340 15% 12%;
+  --muted: 340 12% 95%;
+  --muted-foreground: 340 8% 48%;
+  --border: 340 10% 88%;
+  --input: 340 10% 88%;
+  --ring: 340 65% 65%;
+  --primary: 340 55% 52%;
+  --primary-foreground: 0 0% 100%;
+  --accent: 330 40% 70%;
+  --accent-foreground: 340 15% 12%;
+  --success: 150 55% 45%;
+  --warning: 38 92% 50%;
+  --destructive: 0 72% 51%;
+  --destructive-foreground: 0 0% 98%;
+  --radius: 1rem;
+}
+
+.dark {
+  --background: 340 20% 6%;
+  --foreground: 340 8% 90%;
+  --card: 340 15% 10%;
+  --card-foreground: 340 8% 90%;
+  --muted: 340 12% 14%;
+  --muted-foreground: 340 6% 55%;
+  --border: 340 10% 18%;
+  --input: 340 10% 18%;
+  --ring: 340 55% 60%;
+  --primary: 340 55% 55%;
+  --primary-foreground: 0 0% 100%;
+  --accent: 330 25% 30%;
+  --accent-foreground: 340 8% 90%;
+  --success: 150 50% 48%;
+  --warning: 38 92% 55%;
+  --destructive: 0 62% 50%;
+  --destructive-foreground: 0 0% 98%;
+}
+
+* { border-color: hsl(var(--border)); }
+
+body {
+  background: hsl(var(--background));
+  color: hsl(var(--foreground));
+  font-feature-settings: "rlig" 1, "calt" 1;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+/* Mobile-first safe area padding */
+@supports (padding: env(safe-area-inset-bottom)) {
+  .safe-bottom { padding-bottom: env(safe-area-inset-bottom); }
+  .safe-top { padding-top: env(safe-area-inset-bottom); }
+}
+
+/* Motion system */
+@keyframes fade-up { from { opacity: 0; transform: translateY(8px); } to { opacity: 1; transform: none; } }
+@keyframes fade-in { from { opacity: 0; } to { opacity: 1; } }
+@keyframes pulse-soft { 0%, 100% { opacity: 1; } 50% { opacity: 0.6; } }
+@keyframes scan-line { 0% { top: 0%; } 100% { top: 100%; } }
+.animate-fade-up { animation: fade-up 0.5s cubic-bezier(0.16, 1, 0.3, 1) both; }
+.animate-fade-in { animation: fade-in 0.4s ease both; }
+.animate-pulse-soft { animation: pulse-soft 2s ease-in-out infinite; }
+.animate-scan { animation: scan-line 2s ease-in-out infinite; }

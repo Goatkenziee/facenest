@@ -1,0 +1,13 @@
+{
+  "name": "FaceNest",
+  "short_name": "FaceNest",
+  "description": "On-device face recognition. Private, fast, offline-capable.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#faf5f7",
+  "theme_color": "#c97b8b",
+  "icons": [
+    { "src": "/icon-192.png", "sizes": "192x192", "type": "image/png" },
+    { "src": "/icon-512.png", "sizes": "512x512", "type": "image/png" }
+  ]
+}
